@@ -30,12 +30,13 @@ def talker():
             if serialString.__contains__(bytes("GLL", "utf-8")):
                 gllLat, gllLon = splitSerialString[1], splitSerialString[3]
                 
-                averageLat = (float(ggaLat) + float(gllLat) + float(rmcLat)) / 3
-                averageLon = (float(ggaLon) + float(gllLon) + float(rmcLon)) / 3
-                
-                latLonString = " " + str(averageLat) + "," + str(averageLon)
-                rospy.loginfo(latLonString)
-                pub.publish(latLonString)
+                if ggaLat != "" and gllLat != "" and rmcLat != "":
+                    averageLat = (float(ggaLat) + float(gllLat) + float(rmcLat)) / 3
+                    averageLon = (float(ggaLon) + float(gllLon) + float(rmcLon)) / 3
+                    
+                    latLonString = " " + str(averageLat) + "," + str(averageLon)
+                    rospy.loginfo(latLonString)
+                    pub.publish(latLonString)
         rate.sleep()
 
 if __name__ == '__main__':
