@@ -24,4 +24,4 @@ In another terminal if you run :
 
 The subscriber will print out its own message along with the lat,lon from the GNSSPublisher.py
 
-At competition, the GNSSPublisher can be run through a launch file with the other programs.
+At competition, the GNSSPublisher.py can publish the speed in knots/Km/h, the altitude, and can be run through a launch file with the other programs.
