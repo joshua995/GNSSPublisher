@@ -22,3 +22,5 @@ In another terminal if you run :
   rosrun gnss listener.py
 
 The subscriber will print out its own message along with the lat,lon from the GNSSPublisher.py
+
+At competition, the GNSSPublisher can be run through a launch file with the other programs.
