@@ -1,6 +1,7 @@
 # GNSSPublisher
 For this program to run you will need to have the GNSS unit connected, and 
 in your terminal you have to run: sudo chmod 666 /dev/ttyACM0 
+
 to allow permission to access the serial port.
 /dev/ttyACMO is a default for serial data so it should all be the same on linux.
 
