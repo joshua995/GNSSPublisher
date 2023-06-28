@@ -9,7 +9,7 @@ import serial
 def talker():
     pub = rospy.Publisher('chatter', String, queue_size=10)
     rospy.init_node('talker', anonymous=True)
-    rate = rospy.Rate(38400)
+    rate = rospy.Rate(1000)
     
     serialPort = serial.Serial(port = "/dev/ttyACM0", baudrate=38400, bytesize=8, timeout=2, stopbits=serial.STOPBITS_ONE)
     
