@@ -208,6 +208,9 @@ include_directories(
 catkin_install_python(PROGRAMS scripts/GNSSPublisher.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
+catkin_install_python(PROGRAMS scripts/GNSSPublisherFileLog.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 catkin_install_python(PROGRAMS scripts/GNSSPublisher.py scripts/listener.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
