@@ -1,5 +1,5 @@
 # GNSSPublisher
-If the GNSSPublisher.py code contains GLL as a sentence to read, then the unit must be operating at a rate of 1Hz, otherwise the unit should be operating at 10Hz.
+If the GNSSPublisher.py code contains GLL as a sentence to read, then the unit can operate at a rate of 1Hz, otherwise the unit should be operating at 10Hz.
 
 For this program to run you will need to have the GNSS unit connected.
 
