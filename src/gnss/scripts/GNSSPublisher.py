@@ -1,3 +1,7 @@
+# Joshua Liu
+# 2023-06-27
+# This is a publisher of the GNSS data using the serial port.
+# The data can be accessed via subscribing to it.
 import rospy
 from std_msgs.msg import String
 import serial
