@@ -5,7 +5,7 @@ in your terminal you have to run: sudo chmod 666 /dev/ttyACM0
 to allow permission to access the serial port.
 /dev/ttyACM0 is a default for serial data so it should all be the same on linux.
 
-You should be able to create a subscriber program to access the data like the listener.py program that is related to the map.
+You should be able to create a subscriber program to access the data similar to the listener.py program.
 
 Basic steps to run the GNSSPublisher.py
 1. Pull this src folder by running this in your terminal: git clone https//github.com/joshua995/GNSSPublisher.git
