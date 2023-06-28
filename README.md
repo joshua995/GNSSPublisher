@@ -22,6 +22,6 @@ In another terminal if you run :
   source devel/setup.bash
   rosrun gnss listener.py
 
-The subscriber will print out its own message along with the lat,lon from the GNSSPublisher.py
+The subscriber will print out its message along with the lat,lon from the GNSSPublisher.py
 
-At competition, the GNSSPublisher.py can publish the speed in knots & Km/h, the altitude, and can be run through a launch file with the other programs.
+At the competition, the GNSSPublisher.py can publish the speed in knots & Km/h, the altitude, and can be run through a launch file with the other programs.
