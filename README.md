@@ -5,9 +5,7 @@ in your terminal you have to run: sudo chmod 666 /dev/ttyACM0
 to allow permission to access the serial port.
 /dev/ttyACM0 is a default for serial data so it should all be the same on linux.
 
-run: pip install pyserial
-
-in the terminal
+run: pip install pyserial in the terminal
 
 You should be able to create a subscriber program to access the data similar to the listener.py program.
 
