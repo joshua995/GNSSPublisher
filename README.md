@@ -1,35 +1,41 @@
 # GNSSPublisher
-If the GNSSPublisher.py code contains GLL as a sentence to read, then the unit can operate at a rate of 1Hz, otherwise the unit should be operating at 10Hz.
-
-For this program to run you will need to have the GNSS unit connected.
-
-To allow access to the serial port run this in your terminal: sudo chmod 666 /dev/ttyACM0 
-
-/dev/ttyACM0 is a default for serial data so it should all be the same on linux.
-
-run in the terminal: pip install pyserial
-
-You should be able to create a subscriber program to access the data similar to the listener.py program.
-
-Basic steps to run the GNSSPublisher.py
-1. Pull this repository by running this in your terminal: git clone https//github.com/joshua995/GNSSPublisher.git
-2. Drag the GNSSPublisher folder from your home directory in your catkin workspace's src folder
-3. In your catkin workspace directory run catkin_make
-4. Plug in the GNSS unit
-5. After the setup to allow ROS programs to work, run the GNSS publisher program with:
+There are 3 files you can run after you clone this repository:
+1. GNSSPublisher.py
+2. GNSSPublisherFileLog.py
+3. listener.py
    
-        source devel/setup.bash
+The current version can run when the unit is updating at a frequency of 1Hz or 10Hz (Current).
+The GLL sentence is omitted, because it does not update properly at 10Hz.
+
+Setting up the code (Linux-ROS):
+1. Run the following in the terminal to clone this repository: git clone https//github.com/joshua995/GNSSPublisher.git
+2. From your file directory, drag the cloned repository (GNSSPublisher folder) to your src folder in the catkin workspace you are using.
+3. Run the following in the terminal to allow serial communication in python: pip install pyserial
+4. Navigate to your catkin workspace directory from the terminal, and run: catkin_make
    
-        rosrun gnss GNSSPublisher.py
+Setting up the GNSS unit to work with the code:
+Plug in the GNSS to your computer.
+If you are using a VM, allow the connection to "u-blox AG ..." usb devices.
+From the root directory in the terminal run: sudo cat /dev/ttyACM0 
+If no warnings appear and GNSS sentences are not printing on the terminal, you have to replace /dev/ttyACM0 to the port that will print out the sentences (The port the device is connected to). If a warning appears that tells you the directory does not exist, then the unit is not connected.
+To allow serial communcation to the serial port after the unit is connected, run: sudo chmod 666 /dev/ttyACM0
+If the unit is connected properly, running "sudo cat /dev/ttyACM0" in the root directory will print out the GNSS sentences.
+Running the program:
+Open 3 terminals
+In the first terminal run: roscore
+In the second terminal:
+Navigate to your catkin workspace.
+Run: source devel/setup.bash
+Run: rosrun gnss GNSSPublisher.py
+At this point, the terminal should print out the latitude and longitude in this format: lat,lon
+In the third terminal:
+Navigate to your catkin workspace.
+Run: source devel/setup.bash
+Run: rosrun gnss listener.py
+At this point, the terminal should print out the latitude and longitude in this format: I have received the published lat/lon lat,lon
 
-You should now see the latitude and longitude being printed on the terminal.
+Now the publisher (GNSSPublisher.py) is printing the lat/lon from the GNSS unit, and the subscriber (listener.py) is printing the lat/lon from the GNSSPublisher.py program.
 
-In another terminal if you run: 
+GNSSPublisherFileLog.py: In addition to publishing the same lat/lon to subscribers as the GNSSPublisher.py, it will log the latitude, longitude, speed in knots, speed in km/h and the altitude in a txt file for post analysis or use during the task at hand. To run this, replace the step "3b Run: rosrun gnss GNSSPublisher.py" with: rosrun gnss GNSSPublisherFileLog.py
 
-     source devel/setup.bash
-  
-     rosrun gnss listener.py
 
-The subscriber will print out its message along with the lat,lon from the GNSSPublisher.py
-
-At the competition, the GNSSPublisher.py can publish the speed in knots & Km/h, the altitude, and can be run through a launch file with the other programs.
