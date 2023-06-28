@@ -10,7 +10,7 @@ run in the terminal: pip install pyserial
 You should be able to create a subscriber program to access the data similar to the listener.py program.
 
 Basic steps to run the GNSSPublisher.py
-1. Pull this src folder by running this in your terminal: git clone https//github.com/joshua995/GNSSPublisher.git
+1. Pull this repository by running this in your terminal: git clone https//github.com/joshua995/GNSSPublisher.git
 2. Drag the GNSSPublisher folder from your home directory in your catkin workspace's src folder
 3. In your catkin workspace directory run catkin_make
 4. Plug in the GNSS unit
