@@ -7,7 +7,7 @@ to allow permission to access the serial port.
 
 You should be able to create a subscriber program to access the data like the listener.py program that is related to the map.
 
-Basic steps to run the GNSSPulisher.py
+Basic steps to run the GNSSPublisher.py
 1. Pull this src folder by running this in your terminal: git clone https//github.com/joshua995/GNSSPublisher.git
 2. Drag the GNSSPublisher folder from your home directory in your catkin workspace's src folder
 3. In your catkin workspace directory run catkin_make
