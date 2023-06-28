@@ -2,6 +2,12 @@
 # 2023-06-27
 # This is a publisher of the GNSS data using the serial port.
 # The data can be accessed via subscribing to it.
+# Set GNSS unit to 10Hz using U-Center
+# Sentences that are currently not in use are:
+# GLL: does not work at 10Hz
+# VTG: speed in knots & Km/h
+# The speed in knots from RMC
+#  
 import rospy
 from std_msgs.msg import String
 import serial
@@ -15,7 +21,6 @@ def talker():
     
     ggaLat, ggaLon, ggaAlt = 0, 0, 0
     rmcLat, rmcLon = 0, 0
-    gllLat, gllLon = 0, 0
 
     averageLat, averageLon = [], []
     
@@ -23,16 +28,14 @@ def talker():
         if serialPort.in_waiting:
             serialString = serialPort.readline()
             splitSerialString = serialString.decode('Ascii').split(",")
-            if serialString.__contains__(bytes("GGA", "utf-8")):
-                ggaLat, ggaLon, ggaAlt = splitSerialString[2], splitSerialString[4], splitSerialString[9]
             if serialString.__contains__(bytes("RMC", "utf-8")):
                 rmcLat, rmcLon = splitSerialString[3], splitSerialString[5]
-            if serialString.__contains__(bytes("GLL", "utf-8")):
-                gllLat, gllLon = splitSerialString[1], splitSerialString[3]
-                
-                if ggaLat != "" and gllLat != "" and rmcLat != "":
-                    averageLat = (float(ggaLat) + float(gllLat) + float(rmcLat)) / 3
-                    averageLon = (float(ggaLon) + float(gllLon) + float(rmcLon)) / 3
+            if serialString.__contains__(bytes("GGA", "utf-8")):
+                ggaLat, ggaLon, ggaAlt = splitSerialString[2], splitSerialString[4], splitSerialString[9]
+
+                if ggaLat != "" and rmcLat != "":
+                    averageLat = (float(ggaLat) + float(rmcLat)) / 2
+                    averageLon = (float(ggaLon) + float(rmcLon)) / 2
                     
                     latLonString = " " + str(averageLat) + "," + str(averageLon)
                     rospy.loginfo(latLonString)
