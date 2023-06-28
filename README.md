@@ -23,7 +23,9 @@ Basic steps to run the GNSSPublisher.py
 You should now see the latitude and longitude being printed on the terminal.
 
 In another terminal if you run : 
+
   source devel/setup.bash
+  
   rosrun gnss listener.py
 
 The subscriber will print out its message along with the lat,lon from the GNSSPublisher.py
