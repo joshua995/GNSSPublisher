@@ -12,7 +12,7 @@ Basic steps to run the GNSSPublisher.py
 2. Drag the GNSSPublisher folder from your home directory in your catkin workspace's src folder
 3. In your catkin workspace directory run catkin_make
 4. Plug in the GNSS unit
-5. After the setup to allow ROS programs to work, run the GNNS publisher program with:
+5. After the setup to allow ROS programs to work, run the GNSS publisher program with:
      source devel/setup.bash
      rosrun gnss GNSSPublisher.py
 
