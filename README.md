@@ -16,17 +16,17 @@ Basic steps to run the GNSSPublisher.py
 4. Plug in the GNSS unit
 5. After the setup to allow ROS programs to work, run the GNSS publisher program with:
    
-     source devel/setup.bash
+        source devel/setup.bash
    
-     rosrun gnss GNSSPublisher.py
+        rosrun gnss GNSSPublisher.py
 
 You should now see the latitude and longitude being printed on the terminal.
 
-In another terminal if you run : 
+In another terminal if you run: 
 
-  source devel/setup.bash
+     source devel/setup.bash
   
-  rosrun gnss listener.py
+     rosrun gnss listener.py
 
 The subscriber will print out its message along with the lat,lon from the GNSSPublisher.py
 
