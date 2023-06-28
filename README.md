@@ -1,8 +1,8 @@
 # GNSSPublisher
-For this program to run you will need to have the GNSS unit connected, and 
-in your terminal you have to run: sudo chmod 666 /dev/ttyACM0 
+For this program to run you will need to have the GNSS unit connected.
 
-to allow permission to access the serial port.
+To allow access to the serial port run this in your terminal: sudo chmod 666 /dev/ttyACM0 
+
 /dev/ttyACM0 is a default for serial data so it should all be the same on linux.
 
 run in the terminal: pip install pyserial
