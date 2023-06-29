@@ -35,10 +35,12 @@ Setting up the GNSS unit to work with the code:
 If the unit is connected properly, running "sudo cat /dev/ttyACM0" in the root directory will print out the GNSS sentences.
 
 Running the program:
-Open 3 terminals
-In the first terminal run: roscore
-In the second terminal:
-Navigate to your catkin workspace.
+1. Open 3 terminals
+   a. In the first terminal run:
+
+      roscore
+   B. In the second terminal:
+      Navigate to your catkin workspace.
 Run: source devel/setup.bash
 Run: rosrun gnss GNSSPublisher.py
 At this point, the terminal should print out the latitude and longitude in this format: lat,lon
