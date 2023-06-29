@@ -8,10 +8,13 @@ The current version can run when the unit is updating at a frequency of 1Hz or 1
 The GLL sentence is omitted, because it does not update properly at 10Hz.
 
 Setting up the code (Linux-ROS):
-1. Run the following in the terminal to clone this repository: git clone https//github.com/joshua995/GNSSPublisher.git
-2. From your file directory, drag the cloned repository (GNSSPublisher folder) to your src folder in the catkin workspace you are using.
-3. Run the following in the terminal to allow serial communication in python: pip install pyserial
-4. Navigate to your catkin workspace directory from the terminal, and run: catkin_make
+1. Run the following in the terminal to clone this repository:
+   git clone https//github.com/joshua995/GNSSPublisher.git
+3. From your file directory, drag the cloned repository (GNSSPublisher folder) to your src folder in the catkin workspace you are using.
+4. Run the following in the terminal to allow serial communication in python:
+   pip install pyserial
+6. Navigate to your catkin workspace directory from the terminal, and run:
+   catkin_make
    
 Setting up the GNSS unit to work with the code:
 Plug in the GNSS to your computer.
