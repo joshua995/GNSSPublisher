@@ -26,8 +26,9 @@ Setting up the GNSS unit to work with the code:
 4. From the root directory in the terminal run:
   
    sudo cat /dev/ttyACM0 
+
    If no warnings appear and GNSS sentences are not printing on the terminal, you have to replace /dev/ttyACM0 to the port that will print out the sentences (The port the device is connected to). If a warning appears that tells you the directory does not exist, then the unit is not connected to that port.
-5. To allow serial communcation to the serial port after the unit is connected, run:
+6. To allow serial communcation to the serial port after the unit is connected, run:
   
    sudo chmod 666 /dev/ttyACM0
 If the unit is connected properly, running "sudo cat /dev/ttyACM0" in the root directory will print out the GNSS sentences.
