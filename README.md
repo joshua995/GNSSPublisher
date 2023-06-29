@@ -69,7 +69,7 @@ Running the program:
    
          rosrun gnss listener.py
    
-At this point, the terminal should print out the latitude and longitude in this format: I have received the published lat/lon lat,lon
+   At this point, the terminal should print out the latitude and longitude in this format: I have received the published lat/lon lat,lon
 
 Now the publisher (GNSSPublisher.py) is printing the lat/lon from the GNSS unit, and the subscriber (listener.py) is printing the lat/lon from the GNSSPublisher.py program.
 
