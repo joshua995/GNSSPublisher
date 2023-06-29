@@ -77,4 +77,6 @@ In addition to publishing the same lat/lon to subscribers as the GNSSPublisher.p
 
          rosrun gnss GNSSPublisherFileLog.py
 
+By creating a file that can subscribe to GNSSPublisher.py or GNSSPublisherFileLog.py you will have access to the published latitude and longitude coordinates.
+
 
