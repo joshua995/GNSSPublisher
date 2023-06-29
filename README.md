@@ -73,7 +73,9 @@ Running the program:
 
 Now the publisher (GNSSPublisher.py) is printing the lat/lon from the GNSS unit, and the subscriber (listener.py) is printing the lat/lon from the GNSSPublisher.py program.
 
-GNSSPublisherFileLog.py: In addition to publishing the same lat/lon to subscribers as the GNSSPublisher.py, it will log the latitude, longitude, speed in knots, speed in km/h and the altitude in a txt file for post analysis or use during the task at hand. To run this, replace the step "3b Run: rosrun gnss GNSSPublisher.py" with:
+GNSSPublisherFileLog.py: 
+
+In addition to publishing the same lat/lon to subscribers as the GNSSPublisher.py, it will log the latitude, longitude, speed in knots, speed in km/h and the altitude in a txt file for post analysis or use during the task at hand. To run this, replace the step "3b Run: rosrun gnss GNSSPublisher.py" with:
 
          rosrun gnss GNSSPublisherFileLog.py
 
