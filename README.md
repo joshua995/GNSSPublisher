@@ -20,13 +20,14 @@ Setting up the code (Linux-ROS):
    catkin_make
    
 Setting up the GNSS unit to work with the code:
+
 1. Plug in the GNSS to your computer.
-2. If you are using a VM, allow the connection to "u-blox AG ..." usb devices.
-3. From the root directory in the terminal run:
+3. If you are using a VM, allow the connection to "u-blox AG ..." usb devices.
+4. From the root directory in the terminal run:
   
    sudo cat /dev/ttyACM0 
    If no warnings appear and GNSS sentences are not printing on the terminal, you have to replace /dev/ttyACM0 to the port that will print out the sentences (The port the device is connected to). If a warning appears that tells you the directory does not exist, then the unit is not connected to that port.
-4. To allow serial communcation to the serial port after the unit is connected, run:
+5. To allow serial communcation to the serial port after the unit is connected, run:
   
    sudo chmod 666 /dev/ttyACM0
 If the unit is connected properly, running "sudo cat /dev/ttyACM0" in the root directory will print out the GNSS sentences.
