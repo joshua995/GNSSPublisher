@@ -56,6 +56,7 @@ Running the program:
          rosrun gnss GNSSPublisher.py
    
    At this point, the terminal should print out the latitude and longitude in this format: lat,lon
+   
    c. In the third terminal:
    
       i. Navigate to your catkin workspace.
